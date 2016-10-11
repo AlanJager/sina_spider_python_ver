@@ -1,16 +1,16 @@
 # encoding=utf-8
-BOT_NAME = 'Sina_spider1'
+BOT_NAME = 'Sina_spider'
 
-SPIDER_MODULES = ['Sina_spider1.spiders']
-NEWSPIDER_MODULE = 'Sina_spider1.spiders'
+SPIDER_MODULES = ['Sina_spider.spiders']
+NEWSPIDER_MODULE = 'Sina_spider.spiders'
 
 DOWNLOADER_MIDDLEWARES = {
-    "Sina_spider1.middleware.UserAgentMiddleware": 401,
-    "Sina_spider1.middleware.CookiesMiddleware": 402,
+    "Sina_spider.middleware.UserAgentMiddleware": 401,
+    "Sina_spider.middleware.CookiesMiddleware": 402,
 }
 
 ITEM_PIPELINES = {
-    'Sina_spider1.pipelines.MongoDBPipleline': 300,
+    'Sina_spider.pipelines.MongoDBPipleline': 300,
 }
 
 DOWNLOAD_DELAY = 2  # 间隔时间

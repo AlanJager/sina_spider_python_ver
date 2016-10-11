@@ -4,7 +4,7 @@ import datetime
 from scrapy.spiders import CrawlSpider
 from scrapy.selector import Selector
 from scrapy.http import Request
-from Sina_spider1.items import InformationItem, TweetsItem, FollowsItem, FansItem
+from Sina_spider.items import InformationItem, TweetsItem, FollowsItem, FansItem
 
 
 class Spider(CrawlSpider):
@@ -18,7 +18,8 @@ class Spider(CrawlSpider):
         # , 2139359753, 5579672076, 2517436943, 5778999829, 5780802073, 2159807003,
         # 1756807885, 3378940452, 5762793904, 1885080105, 5778836010, 5722737202, 3105589817, 5882481217, 5831264835,
         # 2717354573, 3637185102, 1934363217, 5336500817, 1431308884, 5818747476, 5073111647, 5398825573, 2501511785,
-        5950061090,
+        # 5950061090,
+        5545995636,
     ]
     scrawl_ID = set(start_urls)  # 记录待爬的微博ID
     finish_ID = set()  # 记录已爬的微博ID
@@ -45,8 +46,8 @@ class Spider(CrawlSpider):
             yield Request(url=url_follows, meta={"item": followsItems, "result": follows},
                           callback=self.parse3)  # 去爬关注人
             yield Request(url=url_fans, meta={"item": fansItems, "result": fans}, callback=self.parse3)  # 去爬粉丝
-            yield Request(url=url_information0, meta={"ID": ID}, callback=self.parse0)  # 去爬个人信息
-            yield Request(url=url_tweets, meta={"ID": ID}, callback=self.parse2)  # 去爬微博
+            # yield Request(url=url_information0, meta={"ID": ID}, callback=self.parse0)  # 去爬个人信息
+            # yield Request(url=url_tweets, meta={"ID": ID}, callback=self.parse2)  # 去爬微博
 
     def parse0(self, response):
         """ 抓取个人信息1 """

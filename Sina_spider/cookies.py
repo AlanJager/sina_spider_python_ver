@@ -7,7 +7,7 @@ import requests
 输入你的微博账号和密码
 """
 myWeiBo = [
-    {'no': '', 'psw': ''},
+    {'no': '13408023291', 'psw': 'xhnmdl11ER'},
 ]
 
 

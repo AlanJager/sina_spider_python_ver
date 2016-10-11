@@ -6,7 +6,7 @@ from items import InformationItem, TweetsItem, FollowsItem, FansItem
 class MongoDBPipleline(object):
     def __init__(self):
         clinet = pymongo.MongoClient("localhost", 27017)
-        db = clinet["Sina"]
+        db = clinet["my_weibo"]
         self.Information = db["Information"]
         self.Tweets = db["Tweets"]
         self.Follows = db["Follows"]
