@@ -1,6 +1,6 @@
 # sina_spider_python_ver
 =========================
-![](https://raw.github.com/meolu/walle-web/master/docs/logo.jpg)
+![](https://github.com/AlanJager/sina_spider_python_ver/blob/master/icon.png)
 
 A sina weibo crawler based on python scrapy
 
@@ -16,7 +16,7 @@ Features
 Requirements
 ------------
 
-* Bash(git、ssh)
+* Bash(git, ssh/zsh)
 * Python 2.7
 * Scrapy
 
