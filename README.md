@@ -1,5 +1,6 @@
 # sina_spider_python_ver
 =========================
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8ab05b28b47a4d5994093a8e0875ccdd)](https://www.codacy.com/app/873863981/sina_spider_python_ver?utm_source=github.com&utm_medium=referral&utm_content=AlanJager/sina_spider_python_ver&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/AlanJager/sina_spider_python_ver.png)](https://travis-ci.org/AlanJager/sina_spider_python_ver) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AlanJager/sina_spider_python_ver/?branch=master)](https://scrutinizer-ci.com/g/AlanJager/sina_spider_python_ver/?branch=master)
 
 A sina weibo crawler based on python scrapy
