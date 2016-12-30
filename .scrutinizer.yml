@@ -2,7 +2,3 @@ checks:
     python:
         code_rating: true
         duplicate_code: true
-
-build:
-    environment:
-        python: 2.7.7
