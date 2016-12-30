@@ -1,6 +1,6 @@
 # sina_spider_python_ver
 =========================
-[![Build Status](https://travis-ci.org/AlanJager/sina_spider_python_ver.png)](https://travis-ci.org/AlanJager/sina_spider_python_ver)
+[![Build Status](https://travis-ci.org/AlanJager/sina_spider_python_ver.png)](https://travis-ci.org/AlanJager/sina_spider_python_ver) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AlanJager/sina_spider_python_ver/?branch=master)](https://scrutinizer-ci.com/g/AlanJager/sina_spider_python_ver/?branch=master)
 
 A sina weibo crawler based on python scrapy
 
