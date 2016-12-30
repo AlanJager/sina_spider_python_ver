@@ -1,4 +1,4 @@
-# encoding=utf-8
+# -*- coding: utf-8 -*-
 
 from scrapy import Item, Field
 
@@ -31,15 +31,3 @@ class TweetsItem(Item):
     Like = Field()  # 点赞数
     Comment = Field()  # 评论数
     Transfer = Field()  # 转载数
-
-
-class FollowsItem(Item):
-    """ 关注人列表 """
-    _id = Field()  # 用户ID
-    follows = Field()  # 关注
-
-
-class FansItem(Item):
-    """ 粉丝列表 """
-    _id = Field()  # 用户ID
-    fans = Field()  # 粉丝

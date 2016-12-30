@@ -4,10 +4,13 @@ import base64
 import requests
 
 """
-输入你的微博账号和密码
+输入你的微博账号和密码，可去淘宝买，一元七个。
+建议买几十个，微博反扒的厉害，太频繁了会出现302转移。
+或者你也可以把时间间隔调大点。
 """
 myWeiBo = [
-    {'no': '13408023291', 'psw': 'xhnmdl11ER'},
+    {'no': 'jiadieyuso3319@163.com', 'psw': 'a123456'},
+    {'no': 'shudieful3618@163.com', 'psw': 'a123456'},
 ]
 
 
@@ -52,4 +55,3 @@ def getCookies(weibo):
 
 cookies = getCookies(myWeiBo)
 print "Get Cookies Finish!( Num:%d)" % len(cookies)
-print cookies
