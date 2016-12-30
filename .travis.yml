@@ -6,4 +6,4 @@ install: "pip install -r requirements.txt"
 
 sudo: required
 
-script: sudo Begin.py
+script: python Begin.py
