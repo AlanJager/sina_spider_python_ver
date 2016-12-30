@@ -11,15 +11,21 @@ class Spider(CrawlSpider):
     name = "sinaSpider"
     host = "http://weibo.cn"
     start_urls = [
-
+        # 2979392192, 'inory', 'sealedh', 1886672467, 'mizukinamachi', 'gununu', 'genraimaho',
+        # 'xuetucao', '1310576097', 'youtsuki'
+        # 'shay0302', 1087047852, 1700812953, 'yukarinyan', 538001251, 612302053, 5125723484,
+        # 5058803600, 'nnlsama', 1868493575
+        # , 2139359753, 5579672076, 2517436943, 5778999829, 5780802073, 2159807003,
+        # 1756807885, 3378940452, 5762793904, 1885080105, 5778836010, 5722737202, 3105589817, 5882481217, 5831264835,
+        # 2717354573, 3637185102, 1934363217, 5336500817, 1431308884, 5818747476, 5073111647, 5398825573, 2501511785,
+        # 5950061090,
+        5545995636,
     ]
     scrawl_ID = set(start_urls)  # 记录待爬的微博ID
     finish_ID = set()  # 记录已爬的微博ID
 
     def start_requests(self):
         while True:
-            if(self.scrawl_ID == set()):
-                continue
             ID = self.scrawl_ID.pop()
             self.finish_ID.add(ID)  # 加入已爬队列
             ID = str(ID)
@@ -40,8 +46,8 @@ class Spider(CrawlSpider):
             yield Request(url=url_follows, meta={"item": followsItems, "result": follows},
                           callback=self.parse3)  # 去爬关注人
             yield Request(url=url_fans, meta={"item": fansItems, "result": fans}, callback=self.parse3)  # 去爬粉丝
-            yield Request(url=url_information0, meta={"ID": ID}, callback=self.parse0)  # 去爬个人信息
-            yield Request(url=url_tweets, meta={"ID": ID}, callback=self.parse2)  # 去爬微博
+            # yield Request(url=url_information0, meta={"ID": ID}, callback=self.parse0)  # 去爬个人信息
+            # yield Request(url=url_tweets, meta={"ID": ID}, callback=self.parse2)  # 去爬微博
 
     def parse0(self, response):
         """ 抓取个人信息1 """
@@ -149,17 +155,13 @@ class Spider(CrawlSpider):
         selector = Selector(response)
         text2 = selector.xpath(
             u'body//table/tr/td/a[text()="\u5173\u6ce8\u4ed6" or text()="\u5173\u6ce8\u5979"]/@href').extract()
-        
         for elem in text2:
             elem = re.findall('uid=(\d+)', elem)
             if elem:
                 response.meta["result"].append(elem[0])
                 ID = int(elem[0])
-                print(ID not in self.finish_ID)
                 if ID not in self.finish_ID:  # 新的ID，如果未爬则加入待爬队列
                     self.scrawl_ID.add(ID)
-
-                # print self.scrawl_ID
         url_next = selector.xpath(
             u'body//div[@class="pa" and @id="pagelist"]/form/div/a[text()="\u4e0b\u9875"]/@href').extract()
         if url_next:
