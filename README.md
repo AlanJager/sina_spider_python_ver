@@ -1,6 +1,6 @@
 # sina_spider_python_ver
 =========================
-[![Build Status](https://travis-ci.org/AlanJager/sina_spider_python_ver.png)](https://travis-ci.org/AlanJager/sina_spider_python_ver) 
+[![Build Status](https://travis-ci.org/z4r/python-coveralls.svg?branch=master)](https://travis-ci.org/z4r/python-coveralls)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8ab05b28b47a4d5994093a8e0875ccdd)](https://www.codacy.com/app/873863981/sina_spider_python_ver?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlanJager/sina_spider_python_ver&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/repos/5866654beab18f6497001d97/badges/51f6a57dcf9af64cb3d7/gpa.svg)](https://codeclimate.com/repos/5866654beab18f6497001d97/feed)
 [![Coverage Status](https://coveralls.io/repos/github/AlanJager/sina_spider_python_ver/badge.svg?branch=master)](https://coveralls.io/github/AlanJager/sina_spider_python_ver?branch=master)
