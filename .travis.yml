@@ -4,6 +4,4 @@ python:
 
 install: "pip install -r requirements.txt"
 
-sudo: required
-
 script: python Begin.py
