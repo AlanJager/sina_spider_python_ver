@@ -1,7 +1,6 @@
 # sina_spider_python_ver
 =========================
 [![Build Status](https://travis-ci.org/AlanJager/sina_spider_python_ver.png)](https://travis-ci.org/AlanJager/sina_spider_python_ver)
-![](https://github.com/AlanJager/sina_spider_python_ver/blob/master/icon.png)
 
 A sina weibo crawler based on python scrapy
 
@@ -101,3 +100,6 @@ Discussing
 - [submit issue](https://github.com/AlanJager/sina_spider_python_verissues/new)
 - email: msjdxhc@gmail.com
 
+Icon
+----
+![](https://github.com/AlanJager/sina_spider_python_ver/blob/master/icon.png)
