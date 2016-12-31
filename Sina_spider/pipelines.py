@@ -9,10 +9,10 @@ class MongoDBPipleline(object):
 
     def init(self, db):
         self.tables = {
-            "information":db["Information"],
-            "tweets":db["Tweets"],
-            "follows":db["Follows"],
-            "fans":db["Fans"]        
+            "information" : db["Information"],
+            "tweets" : db["Tweets"],
+            "follows" : db["Follows"],
+            "fans" : db["Fans"]
         }
 
     # 插入多条
