@@ -68,6 +68,7 @@ class Spider(CrawlSpider):
             url_information1 = "http://weibo.cn/%s/info" % response.meta["ID"]
             yield Request(url=url_information1, meta={"item": informationItems}, callback=self.parse1)
 
+    @staticmethod
     def parse1(self, response):
         """ 抓取个人信息2 """
         informationItems = response.meta["item"]
