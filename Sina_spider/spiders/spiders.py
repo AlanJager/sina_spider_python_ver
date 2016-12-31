@@ -11,7 +11,7 @@ class Spider(CrawlSpider):
     name = "sinaSpider"
     host = "http://weibo.cn"
     start_urls = [
-        # 2979392192, 'inory', 'sealedh', 1886672467, 'mizukinamachi', 'gununu', 'genraimaho',
+        2979392192, 'inory', 'sealedh', 1886672467, 'mizukinamachi', 'gununu', 'genraimaho',
         # 'xuetucao', '1310576097', 'youtsuki'
         # 'shay0302', 1087047852, 1700812953, 'yukarinyan', 538001251, 612302053, 5125723484,
         # 5058803600, 'nnlsama', 1868493575
@@ -46,8 +46,8 @@ class Spider(CrawlSpider):
             yield Request(url=url_follows, meta={"item": followsItems, "result": follows},
                           callback=self.parse3)  # 去爬关注人
             yield Request(url=url_fans, meta={"item": fansItems, "result": fans}, callback=self.parse3)  # 去爬粉丝
-            # yield Request(url=url_information0, meta={"ID": ID}, callback=self.parse0)  # 去爬个人信息
-            # yield Request(url=url_tweets, meta={"ID": ID}, callback=self.parse2)  # 去爬微博
+            yield Request(url=url_information0, meta={"ID": ID}, callback=self.parse0)  # 去爬个人信息
+            yield Request(url=url_tweets, meta={"ID": ID}, callback=self.parse2)  # 去爬微博
 
     def parse0(self, response):
         """ 抓取个人信息1 """
