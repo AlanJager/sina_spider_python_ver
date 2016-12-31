@@ -19,7 +19,7 @@ class MongoDBPipleline(object):
     def inserts(self, item, table):
         items = dict(item)
         rows = items.pop(table)
-        for index, value in enumerate(rows)
+        for index,value in enumerate(rows):
             items[str(index + 1)] = value
         try:
             self.Follows.insert(items)
