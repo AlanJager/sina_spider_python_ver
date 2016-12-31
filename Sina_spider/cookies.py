@@ -3,13 +3,12 @@ import json
 import base64
 import requests
 
-"""
-输入你的微博账号和密码
-"""
+
+# 输入你的微博账号和密码
+
 myWeiBo = [
     {'no': '13408023291', 'psw': 'xhnmdl11ER'},
 ]
-
 
 def getCookies(weibo):
     """ 获取Cookies """
@@ -49,7 +48,5 @@ def getCookies(weibo):
             print "Failed!( Reason:%s )" % info['reason']
     return cookies
 
-
 cookies = getCookies(myWeiBo)
 print "Get Cookies Finish!( Num:%d)" % len(cookies)
-print cookies
