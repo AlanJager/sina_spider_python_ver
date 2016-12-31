@@ -5,41 +5,43 @@ from items import InformationItem, TweetsItem, FollowsItem, FansItem
 
 class MongoDBPipleline(object):
     def __init__(self):
-        clinet = pymongo.MongoClient("localhost", 27017)
-        db = clinet["my_weibo"]
-        self.Information = db["Information"]
-        self.Tweets = db["Tweets"]
-        self.Follows = db["Follows"]
-        self.Fans = db["Fans"]
+        self.init(pymongo.MongoClient("localhost", 27017)["weibos"])
+        
+
+    def init(self, db):
+        self.tables = {
+            "information" : db["Information"],
+            "tweets" : db["Tweets"],
+            "follows" : db["Follows"],
+            "fans" : db["Fans"]        
+        }
+
+    # 插入多条
+    def inserts(self, item, table):
+        items = dict(item)
+        rows = items.pop(table)
+        for i in range(len(rows)):
+            items[str(i + 1)] = rows[i]
+        try:
+            self.Follows.insert(items)
+        except Exception:
+            pass
+ 
+    # 插入一条
+    def insert(self, item, table):
+        try:
+            self.tables[table].insert(dict(item))
+        except Exception:
+            pass
 
     def process_item(self, item, spider):
         """ 判断item的类型，并作相应的处理，再入数据库 """
         if isinstance(item, InformationItem):
-            try:
-                self.Information.insert(dict(item))
-            except Exception:
-                pass
+            self.insert(item, 'information')
         elif isinstance(item, TweetsItem):
-            try:
-                self.Tweets.insert(dict(item))
-            except Exception:
-                pass
+            self.insert(item, 'tweets')
         elif isinstance(item, FollowsItem):
-            followsItems = dict(item)
-            follows = followsItems.pop("follows")
-            for i in range(len(follows)):
-                followsItems[str(i + 1)] = follows[i]
-            try:
-                self.Follows.insert(followsItems)
-            except Exception:
-                pass
+            self.inserts(item, "follows")
         elif isinstance(item, FansItem):
-            fansItems = dict(item)
-            fans = fansItems.pop("fans")
-            for i in range(len(fans)):
-                fansItems[str(i + 1)] = fans[i]
-            try:
-                self.Fans.insert(fansItems)
-            except Exception:
-                pass
+            self.inserts(item, "fans")
         return item
