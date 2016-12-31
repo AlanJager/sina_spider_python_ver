@@ -8,3 +8,6 @@ script: python Begin.py
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+addons:
+    code_climate:
+        repo_token: 733e450108e0efd9a0f5218ef92621550de64359577070166d0bb3522cd2bd1b
