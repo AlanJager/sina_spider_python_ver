@@ -42,7 +42,7 @@ class Spider(CrawlSpider):
             url_fans = "http://weibo.cn/%s/fans" % ID
             url_tweets = "http://weibo.cn/%s/profile?filter=1&page=1" % ID
             url_information0 = "http://weibo.cn/attgroup/opening?uid=%s" % ID
-            
+
             yield Request(url=url_follows, meta={"item": followsItems, "result": follows},
                           callback=self.parse3)  # 去爬关注人
             yield Request(url=url_fans, meta={"item": fansItems, "result": fans}, callback=self.parse3)  # 去爬粉丝
