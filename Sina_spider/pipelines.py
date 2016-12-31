@@ -9,10 +9,10 @@ class MongoDBPipleline(object):
 
     def init(self, db):
         self.tables = {
-            "information": db["Information"],
-            "tweets": db["Tweets"],
-            "follows": db["Follows"],
-            "fans": db["Fans"]        
+            "information":db["Information"],
+            "tweets":db["Tweets"],
+            "follows":db["Follows"],
+            "fans":db["Fans"]        
         }
 
     # 插入多条
@@ -25,7 +25,7 @@ class MongoDBPipleline(object):
             self.Follows.insert(items)
         except Exception:
             pass
- 
+
     # 插入一条
     def insert(self, item, table):
         try:
